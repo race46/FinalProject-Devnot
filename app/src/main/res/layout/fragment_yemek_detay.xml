@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="yemek"
+            type="com.example.finalproject_devnot.entity.Yemekler" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.yemek_detay">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="236dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="281dp"
+            android:src="@drawable/ic_launcher_background"
+            loadImage="@{yemek.yemek_resim_adi}"
+            app:layout_constraintBottom_toTopOf="@+id/yemek_ekle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/isim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="@{yemek.yemek_adi}"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/fiyat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textSize="32dp"
+            android:textColor="#FF0000"
+            android:text="@{`₺ ` + yemek.yemek_fiyat}"
+            app:layout_constraintEnd_toEndOf="@+id/isim"
+            app:layout_constraintStart_toStartOf="@+id/isim"
+            app:layout_constraintTop_toBottomOf="@+id/isim" />
+
+        <Button
+            android:id="@+id/yemek_ekle"
+            android:layout_width="296dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/right_rounded"
+            android:text="sepete ekle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.765"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <EditText
+            android:id="@+id/adet"
+            android:layout_width="57dp"
+            android:layout_height="0dp"
+            android:background="@drawable/left_rounded"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            android:text="1"
+            app:layout_constraintBottom_toBottomOf="@+id/yemek_ekle"
+            app:layout_constraintEnd_toStartOf="@+id/yemek_ekle"
+
+            app:layout_constraintTop_toTopOf="@+id/yemek_ekle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

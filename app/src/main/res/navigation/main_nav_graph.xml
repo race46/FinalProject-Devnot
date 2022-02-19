@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/yemekleri_listele">
+
+    <fragment
+        android:id="@+id/yemekleri_listele"
+        android:name="com.example.finalproject_devnot.fragment.yemekleri_listele"
+        android:label="yemekleri_listele" >
+        <action
+            android:id="@+id/action_yemekleri_listele_to_yemek_detay"
+            app:destination="@id/yemek_detay" />
+        <action
+            android:id="@+id/action_yemekleri_listele_to_sepet"
+            app:destination="@id/sepet" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepet"
+        android:name="com.example.finalproject_devnot.fragment.sepet"
+        android:label="fragment_sepet"
+        tools:layout="@layout/fragment_sepet" />
+    <fragment
+        android:id="@+id/yemek_detay"
+        android:name="com.example.finalproject_devnot.fragment.yemek_detay"
+        android:label="fragment_yemek_detay"
+        tools:layout="@layout/fragment_yemek_detay" >
+        <argument
+            android:name="yemek"
+            app:argType="com.example.finalproject_devnot.entity.Yemekler" />
+    </fragment>
+</navigation>
